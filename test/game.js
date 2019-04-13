@@ -51,7 +51,6 @@ describe("Game", ()=>{
                 });
         });
         it('Should response with status 404 and message "To play game you have to include number in your request body(as JSON)" if body is not correct', (done)=>{
-            const numberToTest = numberCache.getNumber()
             body = {}
 
             chai.request(app)
@@ -64,7 +63,6 @@ describe("Game", ()=>{
                 });                      
         });
         it('Should response with status 404 and message ""Number" must be a number" if body.number is string including letters', (done)=>{
-            const numberToTest = numberCache.getNumber()
             body = {number: "abcd1"}
 
             chai.request(app)
